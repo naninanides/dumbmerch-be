@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+ backend:
+  image: naninanides/be-dumbmerch
+  container_name: backend
+  stdin_open: true
+  restart: unless-stopped
+  ports:
+   - 5000:5000
