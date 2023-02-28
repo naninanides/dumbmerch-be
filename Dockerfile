@@ -3,7 +3,7 @@ WORKDIR /home/app
 COPY . .
 RUN CGO_ENABLED=0  go build
 
-#distroless
+#distroless-malevistus-staging
 FROM gcr.io/distroless/cc-debian11
 WORKDIR /home/app
 COPY --from=distroless /home/app /home/app
