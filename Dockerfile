@@ -1,9 +1,10 @@
-FROM golang:1.18-alpine as builder
+FROM golang:1.18-alpine as distroless
 WORKDIR /home/app
 COPY . .
-RUN go build
+RUN CGO_ENABLED=0  go build
 
-FROM golang:1.18-alpine
+#distroless
+FROM gcr.io/distroless/cc-debian11
 WORKDIR /home/app
-COPY --from=builder /home/app /home/app
+COPY --from=distroless /home/app /home/app
 CMD ["/home/app/dumbmerch"]

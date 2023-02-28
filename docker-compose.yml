@@ -1,7 +1,7 @@
 version: '3.7'
 services:
  backend:
-  image: naninanides/be-dumbmerch
+  image: naninanides/be-dumbmerch-distroless
   container_name: backend
   stdin_open: true
   restart: unless-stopped
